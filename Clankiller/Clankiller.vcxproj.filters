@@ -13,6 +13,15 @@
     <Filter Include="Source\Core\Context">
       <UniqueIdentifier>{28ec3c5f-2819-4d0b-8ddd-565d64ed3392}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Components">
+      <UniqueIdentifier>{7f03cba7-3f17-4a95-a99d-31c4eb7c5ca5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Base">
+      <UniqueIdentifier>{f39e4e94-09c9-4187-a5bb-8f24a88e37b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Systems">
+      <UniqueIdentifier>{cd976422-30b5-45cf-abd4-235ddcc3b985}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp">
@@ -29,6 +38,18 @@
     </ClInclude>
     <ClInclude Include="Context.h">
       <Filter>Source\Core\Context</Filter>
+    </ClInclude>
+    <ClInclude Include="TransformComponent.h">
+      <Filter>Source\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Base.h">
+      <Filter>Source\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelComponent.h">
+      <Filter>Source\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderSystem.h">
+      <Filter>Source\Systems</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

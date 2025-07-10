@@ -10,16 +10,25 @@
     <Filter Include="Source\Core\Game">
       <UniqueIdentifier>{f385df0d-547d-4e6b-9c5c-b5530436e62d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Core\Context">
+      <UniqueIdentifier>{28ec3c5f-2819-4d0b-8ddd-565d64ed3392}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp">
       <Filter>Source\Core\Game</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Context.cpp">
+      <Filter>Source\Core\Context</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
       <Filter>Source\Core\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Context.h">
+      <Filter>Source\Core\Context</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

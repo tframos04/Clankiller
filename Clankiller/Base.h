@@ -6,3 +6,4 @@
 #include <rlgl.h>
 
 using Registry = entt::registry;
+using Entity = entt::entity;

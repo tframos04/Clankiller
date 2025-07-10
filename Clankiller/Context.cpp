@@ -25,22 +25,10 @@ void Context::test()
 	Mesh cubeMesh = GenMeshCube(1.0f, 1.0f, 1.0f);
 	dummyModel = LoadModelFromMesh(cubeMesh);
 
-	auto playerEntity = registry.create();
-	registry.emplace<TransformComponent>(playerEntity,
-		Vector3{ 0.0f, 0.5f, 0.0f },
-		Vector3{ 0.0f, 0.0f, 0.0f },
-		Vector3{ 1.0f, 1.0f, 1.0f }
-	);
-	registry.emplace<ModelComponent>(playerEntity, dummyModel, BLUE);
+	createPlayer(registry, dummyModel, { 0.0f, 0.0f, 0.0f });
 
 	for (int i = 0; i < 5; ++i)
 	{
-		auto enemyEntity = registry.create();
-		registry.emplace<TransformComponent>(enemyEntity,
-			Vector3{ (float)(i - 2) * 3.0f, 0.25f, 5.0f },
-			Vector3{ 0.0f, 0.0f, 0.0f },
-			Vector3{ 0.5f, 0.5f, 0.5f }
-		);
-		registry.emplace<ModelComponent>(enemyEntity, dummyModel, RED);
+		createEnemy(registry, dummyModel, { 10.0f * (i + 1), 10.0f * (i + 1), 10.0f * (i + 1) });
 	}
 }

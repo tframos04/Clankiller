@@ -22,6 +22,9 @@
     <Filter Include="Source\Systems">
       <UniqueIdentifier>{cd976422-30b5-45cf-abd4-235ddcc3b985}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Entities">
+      <UniqueIdentifier>{fda6daa3-1e59-4abb-a45a-ea931b023a8f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp">
@@ -50,6 +53,15 @@
     </ClInclude>
     <ClInclude Include="RenderSystem.h">
       <Filter>Source\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerComponent.h">
+      <Filter>Source\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Source\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Source\Entities</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

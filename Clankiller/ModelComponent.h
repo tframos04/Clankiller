@@ -4,6 +4,6 @@
 
 struct ModelComponent
 {
-	Model model;
+	Model model = { 0 };
 	Color tint = WHITE;
 };

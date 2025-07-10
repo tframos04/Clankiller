@@ -1,8 +1,8 @@
 #pragma once
 
 #include "Base.h"
-#include "TransformComponent.h"
-#include "ModelComponent.h"
+#include "Player.h"
+#include "Enemy.h"
 
 class Context
 {

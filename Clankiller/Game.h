@@ -2,6 +2,7 @@
 
 #include "Base.h"
 #include "Context.h"
+#include "AssetManager.h"
 #include "InputSystem.h"
 #include "ActionSystem.h"
 #include "MovementSystem.h"

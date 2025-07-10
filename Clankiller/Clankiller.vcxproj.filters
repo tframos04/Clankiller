@@ -28,6 +28,9 @@
     <Filter Include="Source\Input">
       <UniqueIdentifier>{60701ee7-dca5-4bcd-9d72-6bebe0ecd60a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Assets">
+      <UniqueIdentifier>{6070cde1-cc05-4a29-9ef8-61f4d3ff8799}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp">
@@ -92,6 +95,12 @@
     </ClInclude>
     <ClInclude Include="CameraSystem.h">
       <Filter>Source\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="AssetStore.h">
+      <Filter>Source\Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="AssetManager.h">
+      <Filter>Source\Assets</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

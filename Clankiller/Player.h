@@ -6,7 +6,7 @@
 #include "ActionComponent.h"
 #include "InputStateComponent.h"
 
-inline Entity createPlayer(Registry& registry, Model model, Vector3 position)
+inline Entity createPlayer(Registry& registry, Vector3 position)
 {
 	const auto entity = registry.create();
 	const Vector3 rotation = { 0.0f, 0.0f, 0.0f };

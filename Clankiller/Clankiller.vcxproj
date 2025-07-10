@@ -130,6 +130,8 @@
   <ItemGroup>
     <ClInclude Include="ActionComponent.h" />
     <ClInclude Include="ActionSystem.h" />
+    <ClInclude Include="AssetManager.h" />
+    <ClInclude Include="AssetStore.h" />
     <ClInclude Include="Base.h" />
     <ClInclude Include="CameraSystem.h" />
     <ClInclude Include="Context.h" />

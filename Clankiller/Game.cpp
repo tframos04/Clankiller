@@ -7,6 +7,10 @@ Game::Game()
 	SetTargetFPS(60);
 	DisableCursor();
 
+	auto& assets = AssetManager::getInstance();
+
+	assets.models.load("cube", "assets/cube.obj");
+
 	camera.up = { 0.0f, 1.0f, 0.0f };
 	camera.fovy = 60.0f;
 	camera.projection = CAMERA_PERSPECTIVE;
@@ -15,6 +19,7 @@ Game::Game()
 
 Game::~Game()
 {
+	AssetManager::getInstance().unloadAllAssets();
 	CloseWindow();
 }
 

@@ -18,6 +18,4 @@ public:
 private:
 	bool isRunning;
 	Registry registry;
-	
-	Model dummyModel;
 };

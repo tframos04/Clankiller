@@ -3,7 +3,8 @@
 #include "Base.h"
 #include "PlayerComponent.h"
 #include "TransformComponent.h"
-#include "ModelComponent.h"
+#include "ActionComponent.h"
+#include "InputStateComponent.h"
 
 inline Entity createPlayer(Registry& registry, Model model, Vector3 position)
 {
@@ -13,7 +14,8 @@ inline Entity createPlayer(Registry& registry, Model model, Vector3 position)
 
 	registry.emplace<PlayerComponent>(entity);
 	registry.emplace<TransformComponent>(entity, position, rotation, scale);
-	registry.emplace<ModelComponent>(entity, model, BLUE);
+	registry.emplace<ActionComponent>(entity);
+	registry.emplace<InputStateComponent>(entity);
 
 	return entity;
 }

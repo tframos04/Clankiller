@@ -3,15 +3,13 @@
 Game::Game()
 	: context(), camera()
 {
-	InitWindow(800, 450, "raylib [core] example - basic window");
+	InitWindow(800, 450, "ClanKiller");
 	SetTargetFPS(60);
+	DisableCursor();
 
-	camera.position = { 10.0f, 10.0f, 10.0f }; 
-	camera.target = { 0.0f, 0.0f, 0.0f };     
-	camera.up = { 0.0f, 1.0f, 0.0f };         
-	camera.fovy = 45.0f;                      
+	camera.up = { 0.0f, 1.0f, 0.0f };
+	camera.fovy = 60.0f;
 	camera.projection = CAMERA_PERSPECTIVE;
-
 	context.test();
 }
 
@@ -26,7 +24,16 @@ void Game::run()
 
 	while (context.getIsRunning())
 	{
-		UpdateCamera(&camera, CAMERA_ORBITAL);
+		float deltaTime = GetFrameTime();
+
+		InputSystem(registry, inputMapping);
+
+		ActionSystem(registry);
+
+		MovementSystem(registry, deltaTime);
+
+		CameraSystem(registry, camera);
+
 		RenderSystem(registry, camera);
 	}
 }

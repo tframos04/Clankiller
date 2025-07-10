@@ -25,6 +25,9 @@
     <Filter Include="Source\Entities">
       <UniqueIdentifier>{fda6daa3-1e59-4abb-a45a-ea931b023a8f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source\Input">
+      <UniqueIdentifier>{60701ee7-dca5-4bcd-9d72-6bebe0ecd60a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp">
@@ -62,6 +65,33 @@
     </ClInclude>
     <ClInclude Include="Enemy.h">
       <Filter>Source\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="ActionComponent.h">
+      <Filter>Source\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="InputStateComponent.h">
+      <Filter>Source\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="GameAction.h">
+      <Filter>Source\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="InputSource.h">
+      <Filter>Source\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="InputMapping.h">
+      <Filter>Source\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="InputSystem.h">
+      <Filter>Source\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="ActionSystem.h">
+      <Filter>Source\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="MovementSystem.h">
+      <Filter>Source\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraSystem.h">
+      <Filter>Source\Systems</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

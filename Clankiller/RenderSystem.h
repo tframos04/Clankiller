@@ -8,11 +8,13 @@ static inline void onEnterSystem(const Camera3D& camera)
 	BeginDrawing();
 	ClearBackground(WHITE);
 	BeginMode3D(camera);
+	DrawGrid(200, 1.0f);
 }
 
 static inline void onExitSystem()
 {
 	EndMode3D();
+	DrawFPS(10, 10);
 	EndDrawing();
 }
 

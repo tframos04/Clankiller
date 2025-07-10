@@ -25,10 +25,10 @@ void Context::test()
 	Mesh cubeMesh = GenMeshCube(1.0f, 1.0f, 1.0f);
 	dummyModel = LoadModelFromMesh(cubeMesh);
 
-	createPlayer(registry, dummyModel, { 0.0f, 0.0f, 0.0f });
+	createPlayer(registry, dummyModel, { 0.0f, 1.0f, 0.0f });
 
 	for (int i = 0; i < 5; ++i)
 	{
-		createEnemy(registry, dummyModel, { 10.0f * (i + 1), 10.0f * (i + 1), 10.0f * (i + 1) });
+		createEnemy(registry, dummyModel, { 10.0f * (i + 1), 0.5f, 0.0f});
 	}
 }

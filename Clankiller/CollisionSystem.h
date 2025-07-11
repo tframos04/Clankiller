@@ -3,6 +3,7 @@
 #include "Base.h"
 #include "TransformComponent.h"
 #include "ColliderComponent.h"
+#include "HeldByPlayerComponent.h"
 
 inline BoundingBox GetWorldBoundingBox(const TransformComponent& transform, const ColliderComponent& collider) {
     BoundingBox worldBox = collider.box;
@@ -15,44 +16,71 @@ inline void CollisionSystem(Registry& registry)
 {
     auto view = registry.view<TransformComponent, const ColliderComponent>();
 
-    // This is an O(n^2) check. For a few entities, it's fine.
-    // For many entities, a spatial partitioning structure (e.g., a grid) would be needed.
     for (auto [entityA, transformA, colliderA] : view.each())
     {
         for (auto [entityB, transformB, colliderB] : view.each())
         {
-            // Don't check an entity against itself
-            if (entityA == entityB) continue;
+            if (entityA >= entityB) continue; // Avoid self-collision and double checks
 
-            // To avoid checking and resolving every pair twice (A-B and B-A),
-            // we can just check one way. This ensures resolution only happens once.
-            if (entityA > entityB) continue;
+            // --- NEW COLLISION RULES ---
+
+            bool isAHeld = registry.any_of<HeldByPlayerComponent>(entityA);
+            bool isBHeld = registry.any_of<HeldByPlayerComponent>(entityB);
+            bool isAPlayer = registry.any_of<PlayerComponent>(entityA);
+            bool isBPlayer = registry.any_of<PlayerComponent>(entityB);
+
+            // Rule 1: Ignore collision between the player and the object they are holding.
+            if ((isAPlayer && isBHeld) || (isBPlayer && isAHeld))
+            {
+                continue; // Skip this collision check
+            }
 
             BoundingBox boxA = GetWorldBoundingBox(transformA, colliderA);
             BoundingBox boxB = GetWorldBoundingBox(transformB, colliderB);
 
             if (CheckCollisionBoxes(boxA, boxB))
             {
-                // Collision detected! Now we need to resolve it by pushing them apart.
-
-                // Calculate penetration depth on each axis
+                // Calculate penetration depth
                 float overlapX = (boxA.max.x - boxA.min.x) / 2.0f + (boxB.max.x - boxB.min.x) / 2.0f - fabsf(transformA.position.x - transformB.position.x);
                 float overlapZ = (boxA.max.z - boxA.min.z) / 2.0f + (boxB.max.z - boxB.min.z) / 2.0f - fabsf(transformA.position.z - transformB.position.z);
 
-                // We resolve on the axis with the smallest overlap (least penetration)
-                if (overlapX < overlapZ)
-                {
-                    // Resolve on X axis
-                    float resolve = (transformA.position.x > transformB.position.x) ? overlapX : -overlapX;
-                    transformA.position.x += resolve / 2.0f;
-                    transformB.position.x -= resolve / 2.0f;
+                // --- NEW RESOLUTION LOGIC ---
+
+                // Rule 2: If one object is held, it's "immovable" and only pushes the other object.
+                if (isAHeld) { // Object A is held by the player
+                    // Push only B
+                    if (overlapX < overlapZ) {
+                        float resolve = (transformA.position.x > transformB.position.x) ? -overlapX : overlapX;
+                        transformB.position.x += resolve;
+                    }
+                    else {
+                        float resolve = (transformA.position.z > transformB.position.z) ? -overlapZ : overlapZ;
+                        transformB.position.z += resolve;
+                    }
                 }
-                else
-                {
-                    // Resolve on Z axis
-                    float resolve = (transformA.position.z > transformB.position.z) ? overlapZ : -overlapZ;
-                    transformA.position.z += resolve / 2.0f;
-                    transformB.position.z -= resolve / 2.0f;
+                else if (isBHeld) { // Object B is held by the player
+                    // Push only A
+                    if (overlapX < overlapZ) {
+                        float resolve = (transformB.position.x > transformA.position.x) ? -overlapX : overlapX;
+                        transformA.position.x += resolve;
+                    }
+                    else {
+                        float resolve = (transformB.position.z > transformA.position.z) ? -overlapZ : overlapZ;
+                        transformA.position.z += resolve;
+                    }
+                }
+                else {
+                    // Original behavior: Push both objects apart equally.
+                    if (overlapX < overlapZ) {
+                        float resolve = (transformA.position.x > transformB.position.x) ? overlapX : -overlapX;
+                        transformA.position.x += resolve / 2.0f;
+                        transformB.position.x -= resolve / 2.0f;
+                    }
+                    else {
+                        float resolve = (transformA.position.z > transformB.position.z) ? overlapZ : -overlapZ;
+                        transformA.position.z += resolve / 2.0f;
+                        transformB.position.z -= resolve / 2.0f;
+                    }
                 }
             }
         }

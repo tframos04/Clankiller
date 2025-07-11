@@ -10,6 +10,7 @@
 #include "CameraSystem.h"
 #include "LightingSystem.h"
 #include "RenderSystem.h"
+#include "GrabSystem.h"
 
 class Game
 {

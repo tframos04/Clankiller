@@ -43,6 +43,9 @@
     <ClCompile Include="PointLight.h">
       <Filter>Source\Entities</Filter>
     </ClCompile>
+    <ClCompile Include="GrabbableComponent.h">
+      <Filter>Source\Components</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -119,6 +122,15 @@
     </ClInclude>
     <ClInclude Include="CollisionSystem.h">
       <Filter>Source\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="GrabbableEntity.h">
+      <Filter>Source\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="GrabSystem.h">
+      <Filter>Source\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="HeldByPlayerComponent.h">
+      <Filter>Source\Components</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

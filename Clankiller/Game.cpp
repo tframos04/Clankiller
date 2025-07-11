@@ -44,6 +44,7 @@ void Game::run()
 
 		ActionSystem(registry);
 
+		GrabSystem(registry); // <-- NEW!
 		MovementSystem(registry, deltaTime);
 
 		CollisionSystem(registry);

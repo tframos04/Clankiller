@@ -7,5 +7,6 @@ enum class GameAction
     MoveLeft, 
     MoveRight,
     LookX, 
-    LookY
+    LookY,
+    GrabDrop // <-- New action
 };

@@ -30,4 +30,5 @@ void Context::test(Shader& lightingShader)
 
 	createPointLight(registry, lightingShader, { -20.0f, -12.0f, -22.0f }, WHITE);
 	createPointLight(registry, lightingShader, { 20.0f, 12.0f, 23.0f }, BLUE);
+	createGrabbableCube(registry, { 3.0f, 0.5f, 3.0f });
 }

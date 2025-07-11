@@ -17,5 +17,6 @@ struct InputMapping {
 
         analogActionMap[InputSource::MouseX] = GameAction::LookX;
         analogActionMap[InputSource::MouseY] = GameAction::LookY;
+        keyActionMap[KEY_E] = GameAction::GrabDrop; // <-- Map the key
     }
 };

@@ -11,6 +11,7 @@ inline void InputSystem(Registry& registry, const InputMapping& mapping)
     for (auto [entity, state] : view.each()) 
     {
         state.activeActions.clear();
+        state.pressedActions.clear(); // <-- Clear pressed actions each frame
         state.actionValues.clear();
 
         for (const auto& [key, action] : mapping.keyActionMap) 
@@ -18,6 +19,11 @@ inline void InputSystem(Registry& registry, const InputMapping& mapping)
             if (IsKeyDown(key)) 
             {
                 state.activeActions.insert(action);
+            }
+
+            if (IsKeyPressed(key))
+            {
+                state.pressedActions.insert(action);
             }
         }
 

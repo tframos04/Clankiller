@@ -8,7 +8,7 @@ inline void CameraSystem(Registry& registry, Camera3D& camera)
 {
     auto view = registry.view<const PlayerComponent, const TransformComponent>();
 
-    for (auto [entity, transform] : view.each()) 
+    for (auto [entity, player, transform] : view.each())
     {
         camera.position = transform.position;
 

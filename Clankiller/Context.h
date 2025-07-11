@@ -4,6 +4,7 @@
 #include "Player.h"
 #include "Enemy.h"
 #include "PointLight.h"
+#include "GrabbableEntity.h"
 
 class Context
 {

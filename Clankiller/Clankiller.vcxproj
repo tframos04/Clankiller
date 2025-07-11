@@ -140,6 +140,9 @@
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameAction.h" />
+    <ClInclude Include="GrabbableEntity.h" />
+    <ClInclude Include="GrabSystem.h" />
+    <ClInclude Include="HeldByPlayerComponent.h" />
     <ClInclude Include="InputMapping.h" />
     <ClInclude Include="InputSource.h" />
     <ClInclude Include="InputStateComponent.h" />
@@ -157,6 +160,7 @@
   <ItemGroup>
     <ClCompile Include="Context.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GrabbableComponent.h" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PointLight.h" />
   </ItemGroup>

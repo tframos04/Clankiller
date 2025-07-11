@@ -22,6 +22,7 @@ public:
 
 	AssetStore<Model> models;
 	AssetStore<Sound> sounds;
+	AssetStore<Shader> shaders;
 
 private:
 	AssetManager() = default;

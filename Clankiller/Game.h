@@ -7,6 +7,7 @@
 #include "ActionSystem.h"
 #include "MovementSystem.h"
 #include "CameraSystem.h"
+#include "LightingSystem.h"
 #include "RenderSystem.h"
 
 class Game
@@ -21,4 +22,6 @@ private:
 	Context context;
 	Camera3D camera;
 	InputMapping inputMapping;
+	Shader lightingShader;
+	Light mainLight;
 };

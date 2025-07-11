@@ -142,17 +142,25 @@
     <ClInclude Include="InputSource.h" />
     <ClInclude Include="InputStateComponent.h" />
     <ClInclude Include="InputSystem.h" />
+    <ClInclude Include="LightComponent.h" />
+    <ClInclude Include="LightingSystem.h" />
     <ClInclude Include="ModelComponent.h" />
     <ClInclude Include="MovementSystem.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerComponent.h" />
     <ClInclude Include="RenderSystem.h" />
+    <ClInclude Include="rlights.h" />
     <ClInclude Include="TransformComponent.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Context.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="PointLight.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="lighting.fs" />
+    <None Include="lighting.vs" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

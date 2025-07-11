@@ -40,6 +40,9 @@
     <ClCompile Include="Context.cpp">
       <Filter>Source\Core\Context</Filter>
     </ClCompile>
+    <ClCompile Include="PointLight.h">
+      <Filter>Source\Entities</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -102,5 +105,18 @@
     <ClInclude Include="AssetManager.h">
       <Filter>Source\Assets</Filter>
     </ClInclude>
+    <ClInclude Include="rlights.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="LightComponent.h">
+      <Filter>Source\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="LightingSystem.h">
+      <Filter>Source\Systems</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="lighting.vs" />
+    <None Include="lighting.fs" />
   </ItemGroup>
 </Project>

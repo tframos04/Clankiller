@@ -1,3 +1,4 @@
+#define RLIGHTS_IMPLEMENTATION
 #include "Game.h"
 
 int main()

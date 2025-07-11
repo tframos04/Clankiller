@@ -57,3 +57,20 @@ inline void AssetStore<Sound>::unloadAll() {
 	}
 	resources.clear();
 }
+
+template<>
+inline void AssetStore<Shader>::load(const std::string& name, const std::string& path) {
+	std::string vsPath = path + ".vs";
+	std::string fsPath = path + ".fs";
+	if (resources.find(name) == resources.end()) {
+		resources[name] = LoadShader(vsPath.c_str(), fsPath.c_str());
+	}
+}
+
+template<>
+inline void AssetStore<Shader>::unloadAll() {
+	for (auto const& [name, shader] : resources) {
+		UnloadShader(shader);
+	}
+	resources.clear();
+}

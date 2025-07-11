@@ -6,6 +6,7 @@
 #include "InputSystem.h"
 #include "ActionSystem.h"
 #include "MovementSystem.h"
+#include "CollisionSystem.h"
 #include "CameraSystem.h"
 #include "LightingSystem.h"
 #include "RenderSystem.h"

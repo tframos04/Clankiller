@@ -9,7 +9,7 @@ Game::Game()
 
 	auto& assets = AssetManager::getInstance();
 
-	assets.models.load("cube", "assets/monkey.obj");
+	assets.models.load("cube", "assets/cube.obj");
 	assets.shaders.load("lighting", "assets/lighting");
 
 	lightingShader = assets.shaders.get("lighting"); 
@@ -45,6 +45,8 @@ void Game::run()
 		ActionSystem(registry);
 
 		MovementSystem(registry, deltaTime);
+
+		CollisionSystem(registry);
 
 		CameraSystem(registry, camera);
 

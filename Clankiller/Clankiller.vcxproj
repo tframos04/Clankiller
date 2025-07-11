@@ -133,7 +133,9 @@
     <ClInclude Include="AssetManager.h" />
     <ClInclude Include="AssetStore.h" />
     <ClInclude Include="Base.h" />
+    <ClInclude Include="ColliderComponent.h" />
     <ClInclude Include="CameraSystem.h" />
+    <ClInclude Include="CollisionSystem.h" />
     <ClInclude Include="Context.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="Game.h" />
